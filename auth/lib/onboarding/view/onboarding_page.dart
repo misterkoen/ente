@@ -90,8 +90,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
           child: SingleChildScrollView(
             child: Center(
               child: ConstrainedBox(
-                constraints:
-                    const BoxConstraints.tightFor(height: 800, width: 450),
+                constraints: BoxConstraints(
+                  minHeight: MediaQuery.of(context).size.height,
+                ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                     vertical: 40.0,
@@ -100,6 +101,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   child: Column(
                     children: [
                       Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           kDebugMode
                               ? GestureDetector(
@@ -169,8 +172,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       ),
                       const SizedBox(height: 16),
                       Container(
-                        height: 56,
                         width: double.infinity,
+                        height: 56,
                         padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                         child: Hero(
                           tag: "log_in",
@@ -196,6 +199,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           onTap: _optForOfflineMode,
                           child: Center(
                             child: Text(
+                              textAlign: TextAlign.center,
                               l10n.useOffline,
                               style: body.copyWith(
                                 color: Theme.of(context)
