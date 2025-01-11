@@ -172,8 +172,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       ),
                       const SizedBox(height: 16),
                       Container(
-                        width: double.infinity,
                         height: 56,
+                        width: double.infinity,
                         padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                         child: Hero(
                           tag: "log_in",
