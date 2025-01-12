@@ -24,7 +24,10 @@ class HomeEmptyStateWidget extends StatelessWidget {
     return SingleChildScrollView(
       child: Center(
         child: ConstrainedBox(
-          constraints: const BoxConstraints.tightFor(height: 800, width: 450),
+          constraints: BoxConstraints(
+            minHeight: MediaQuery.of(context).size.height,
+            minWidth: 450,
+          ),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 40.0, horizontal: 40),
             child: Column(
@@ -47,8 +50,14 @@ class HomeEmptyStateWidget extends StatelessWidget {
                       SizedBox(
                         width: 400,
                         child: OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                          ),
                           onPressed: onScanTap,
-                          child: Text(l10n.importScanQrCode),
+                          child: Text(
+                            l10n.importScanQrCode,
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       ),
                     const SizedBox(height: 18),
@@ -56,16 +65,28 @@ class HomeEmptyStateWidget extends StatelessWidget {
                       SizedBox(
                         width: 400,
                         child: OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                          ),
                           onPressed: onImportFromGallery,
-                          child: const Text("Import from gallery"),
+                          child: const Text(
+                            "Import from gallery",
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       ),
                     const SizedBox(height: 18),
                     SizedBox(
                       width: 400,
                       child: OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                        ),
                         onPressed: onManuallySetupTap,
-                        child: Text(l10n.importEnterSetupKey),
+                        child: Text(
+                          l10n.importEnterSetupKey,
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
                     const SizedBox(height: 54),
